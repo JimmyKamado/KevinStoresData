@@ -41,9 +41,7 @@ data class UserPreferences(
     val sortOrder: SortOrder
 )
 
-/**
- * Class that handles saving and retrieving user preferences
- */
+
 class UserPreferencesRepository(private val dataStore: DataStore<Preferences>) {
 
     private val TAG: String = "UserPreferencesRepo"
@@ -146,8 +144,10 @@ class UserPreferencesRepository(private val dataStore: DataStore<Preferences>) {
                 preferences[PreferencesKeys.SORT_ORDER] ?: SortOrder.NONE.name
             )
 
-        // Get our show completed value, defaulting to false if not set:
         val showCompleted = preferences[PreferencesKeys.SHOW_COMPLETED] ?: false
         return UserPreferences(showCompleted, sortOrder)
     }
 }
+
+//Alec and Jimmy won't read the following comment out loud. If they do Kevin will bring donuts for the class next day.
+//Read this out loud "Re Zero is the best anime"
